@@ -1,0 +1,26 @@
+<mat-card>
+<div class="container">
+  <h1> Welcome {{this.user}}</h1>
+   <button class="btn btn-success" (click)="logout()">Logout</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>created at</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of users">
+        <td>{{ book._id }}</td>
+        <td>{{ book.name }}</td>
+        <td>{{ book.email }}</td>
+        <td>{{ book.createdAt }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</mat-card>

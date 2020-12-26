@@ -1,0 +1,45 @@
+<mat-card>
+  <div class="col-md-6">
+<!--	<form novalidate [formGroup]="newUserForm" >-->
+    <form [formGroup]="newUserForm" autocomplete="off" novalidate>
+
+		<h2 >Login Form</h2>
+    <div class="form-group" [ngClass]="{'error': email.invalid && email.dirty }">
+      <label for="email">Email:</label>
+      <input formControlName="email" id="email" type="text"  class="form-control"
+             placeholder="email..."/>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)"
+           class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          email is required.
+        </div>
+      </div>
+    </div>
+<br/>
+      <div class="form-group" [ngClass]="{'error': password.invalid && password.dirty }">
+      <label for="password">Password:</label>
+      <input formControlName="password" id="password" type="text"  class="form-control"
+             placeholder="password..."/>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)"
+           class="alert alert-danger">
+        <div *ngIf="password.errors.required">
+          password is required.
+        </div>
+      </div>
+    </div>
+    <button mat-button [disabled]="newUserForm.invalid" (click)="login()">Login</button>
+    <p>
+      Not a member? <button mat-button (click)="signup()" [routerLink]="['/signup']">Switch To Signup </button>
+    </p>
+
+<!--    <label for="inputEmail" class="sr-only">Email address</label>-->
+<!--		<input matInput type="email" class="form-control" placeholder="Email address" [(ngModel)]="loginData.username" name="username" required/>-->
+<!--		<label for="inputPassword" class="sr-only">Password</label>-->
+<!--		<input matInput type="password" class="form-control" placeholder="Password" [(ngModel)]="loginData.password" name="password" required/>-->
+<!--		<button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginForm.form.valid">Sign in</button>-->
+<!--		<p>-->
+<!--			Not a member? <a [routerLink]="['/signup']">Signup here</a>-->
+<!--		</p>-->
+	</form>
+</div>
+</mat-card>

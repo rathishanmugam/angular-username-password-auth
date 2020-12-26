@@ -1,0 +1,35 @@
+<p>
+  <mat-toolbar >
+
+<!--    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">-->
+<!--      <mat-icon>menu</mat-icon>-->
+<!--    </button>-->
+    <span>Authentication App</span>
+    <span class="example-spacer"></span>
+
+    <a mat-list-item [routerLinkActive]="'active'"  style="margin-right: 20px" [routerLink]="['/books']">
+      <span *ngIf="isAuthenticated"> Profile</span>
+      </a>
+      <a mat-list-item [routerLinkActive]="'active'"  style="margin-right: 20px" [routerLink]="['/login']">
+        <span *ngIf="!isAuthenticated"> Auth</span>
+
+      </a>
+    <a mat-list-item [routerLinkActive]="'active'"  style="margin-right: 20px" (click)="onLogout()" >
+      <span *ngIf="isAuthenticated"> Logout</span>
+
+    </a>
+<!--    <button mat-icon-button (click)="signup()" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">-->
+<!--      <span *ngIf="!isAuthenticated">-->
+<!--      <mat-icon>home</mat-icon>-->
+<!--      </span>-->
+<!--    </button>-->
+<!--    <button mat-icon-button (click)="signout()" class="example-icon" aria-label="Example icon-button with share icon">-->
+<!--     <span *ngIf="isAuthenticated">-->
+<!--      <mat-icon >logout</mat-icon>-->
+<!--     </span>-->
+<!--    </button>-->
+  </mat-toolbar>
+</p>
+
+
+<router-outlet></router-outlet>
